@@ -1,5 +1,11 @@
 # Proyecto TC1001S
-## Packman
+## Pacman
+Se realizó una serie de modificaciones al código de freegames del videojuego de Pacman, para cumplir con nuevas funcionalidades requeridas:
+
+1. Se cambió el tablero centrandolo, incrementando su tamañan y cambiando el color y fuente.
+2. Se cambió la forma y color del alimento de puntos blancos a estrellas doradas.
+3. Se modificó la velocidad para que los fantasmas vayan mas rápido.
+4. Se ajustaron y añadieron comentarios para cumplir con el estándar PEP8.
 
 ## Tic Tac Toe
 
