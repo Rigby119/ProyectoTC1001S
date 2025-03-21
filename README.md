@@ -6,6 +6,9 @@ Se realizó una serie de modificaciones al código de freegames del videojuego d
 2. Se cambió la forma y color del alimento de puntos blancos a estrellas doradas.
 3. Se modificó la velocidad para que los fantasmas vayan mas rápido.
 4. Se ajustaron y añadieron comentarios para cumplir con el estándar PEP8.
+### Autor
+Alan Castillo Sánchez
+A01708668
 
 ## Tic Tac Toe
 
