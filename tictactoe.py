@@ -26,23 +26,32 @@ def grid():
 
 def drawx(x, y):
     """Draw X player."""
-    line(x, y, x + 133, y + 133)  # Diagonal \
-    line(x, y + 133, x + 133, y)  # Diagonal /
+    turtle.width(4)  # Increases line width
+    turtle.color("red")  # Changes the color to red
+    line(x, y, x + 83, y + 83)  # Diagonal \
+    line(x, y + 83, x + 83, y)  # Diagonal /
+    turtle.color("black")  # Return to black
+    turtle.width(1)  # Decreases line width
 
 
 def drawo(x, y):
     """Draw O player."""
+    turtle.width(4)  # Increases line width
+    turtle.color("blue")  # Changes the color to blue
     turtle.up()  # Disable drawings
-    turtle.goto(x + 67, y + 5)  # Moves the turtle
+    turtle.goto(x + 42, y)  # Moves the turtle
     turtle.down()  # Start drawing
-    turtle.circle(62)  # Make a circle with radius 62
+    turtle.circle(42)  # Make a circle with radius 62
+    turtle.color("black")  # Return to black
+    turtle.width(1)  # Decreases line width
 
 
 def floor(value):
     """Round value down to grid with square size 133."""
-    return ((value + 200) // 133) * 133 - 200
+    return ((value + 200) // 133) * 133 - 200 + 25
+    # 25 is the padding for the new size
     # Possible return values:
-    # -200, -67, 66
+    # -175, -42, 91
 
 
 state = {'player': 0}  # Sets the first turn as x
