@@ -137,7 +137,7 @@ def world():
 def move():
     """Actualiza el estado del juego moviendo a pacman y los fantasmas."""
     writer.undo()  # Borra el puntaje anterior
-    writer.write(state['score'])  # Escribe el nuevo puntaje
+    writer.write(state['score'], font=("Times New Roman", 28, "bold"))  # Escribe el nuevo puntaje
 
     turtle.clear()  # Limpia la pantalla para el siguiente frame
 
@@ -212,8 +212,8 @@ turtle.hideturtle()  # Oculta el turtle principal
 turtle.tracer(False)  # Desactiva la animación de los turtles
 
 # Configuración del turtle 'writer' para mostrar el puntaje
-writer.goto(160, 160)
-writer.color('white')
+writer.goto(160, 0)
+writer.color('yellow')
 writer.write(state['score'])
 turtle.listen()  # Escucha los eventos del teclado
 
