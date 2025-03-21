@@ -136,7 +136,7 @@ def world():
                 path.begin_fill()
 
                 # Dibuja una estrella de 5 puntas
-                for _ in range(5):  
+                for _ in range(5):
                     path.forward(5)
                     path.right(144)
 
@@ -144,12 +144,11 @@ def world():
                 path.color('blue')  # Restaura el color original
 
 
-
 def move():
     """Actualiza el estado del juego moviendo a pacman y los fantasmas."""
     writer.undo()  # Borra el puntaje anterior
-    writer.write(state['score'], font=("Times New Roman", 28, "bold"))  # Escribe el nuevo puntaje
-
+    writer.write(state['score'],
+                 font=("Times New Roman", 28, "bold"))  # Escribe nuevo puntaje
     turtle.clear()  # Limpia la pantalla para el siguiente frame
 
     # Mueve a pacman si la nueva posición es válida
