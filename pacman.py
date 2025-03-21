@@ -130,8 +130,19 @@ def world():
             # Si el tile es 1, dibuja el punto de comida en el centro
             if tile == 1:
                 path.up()
-                path.goto(x + 10, y + 10)
-                path.dot(2, 'white')
+                path.goto(x + 7, y + 12)
+                path.down()
+                path.color('gold')  # Cambia el color del punto de comida
+                path.begin_fill()
+
+                # Dibuja una estrella de 5 puntas
+                for _ in range(5):  
+                    path.forward(5)
+                    path.right(144)
+
+                path.end_fill()
+                path.color('blue')  # Restaura el color original
+
 
 
 def move():
