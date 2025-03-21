@@ -46,6 +46,11 @@ def drawo(x, y):
     turtle.width(1)  # Decreases line width
 
 
+def gridIndex(value):
+    """Round value to a certain index on the grid"""
+    return int((value + 200) // 133)
+
+
 def floor(value):
     """Round value down to grid with square size 133."""
     return ((value + 200) // 133) * 133 - 200 + 25
@@ -60,15 +65,21 @@ players = [drawx, drawo]  # Set of functions
 
 def tap(x, y):
     """Draw X or O in tapped square."""
+    indX = gridIndex(x)  # Get X index
+    indY = gridIndex(y)  # Get Y index
     x = floor(x)  # Round X value
     y = floor(y)  # Round Y value
-    player = state['player']  # Get the current player
-    draw = players[player]  # Select the shape
-    draw(x, y)  # Draws the shape in the right spot
-    turtle.update()  # Update the changes
-    state['player'] = not player  # Switch players
+    if cellStates[indX][indY] == 0:
+        player = state['player']  # Get the current player
+        draw = players[player]  # Select the shape
+        draw(x, y)  # Draws the shape in the right spot
+        turtle.update()  # Update the changes
+        state['player'] = not player  # Switch players
+        cellStates[indX][indY] = 1
 
 
+# Create a Matrix for the state of each cell
+cellStates = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 # Initial setup for the screen (padding of 20px)
 turtle.setup(420, 420, 370, 0)
 # Hide the pencil from turtle
